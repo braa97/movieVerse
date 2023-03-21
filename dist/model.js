@@ -8,7 +8,6 @@ class model {
       moviesDataResult.forEach(element => {
         this.moviesData.push(element);
       });
-      return this.moviesData;
     });
   }
 }

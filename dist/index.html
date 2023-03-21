@@ -4,67 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2d46c73150.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css" />
     <script src="/handlebars/dist/handlebars.js"></script>
     <script src="/jquery/dist/jquery.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
     <title>moviewVerse</title>
 </head>
 <body>
+  <div class="container">
 
+    <div class="navbar">
+      <div class="logo">movieVerse</div>
+      <div class="links">
+        <div class="nav-items">Home</div>
+        <div class="nav-items">Browse</div>
+        <div class="nav-items">Favorite</div>
+        <div class="nav-items">History</div>
+      </div>
+      <div class="user"><i class="fa-solid fa-user"></i></div>
+    </div>
 
+    <div class="main-content">
 
-    <div class="topnav"> 
-        <a class="active" href="#home">Home</a>
-        <a href="#favourites">favourites</a>
-        <a href="#history">History</a>
-        <a href="#about">About</a>
+      <div class="intro">
+        <h1>Review, Rate and more with <b>movieVerse</b></h1>
+        <p>Welcome to <b>moviewVerse</b>, your home for all things movies, here you can review and rate movies,<br>
+          you can also add movies to your favourite list and browse movies based on your own preferences, fell free to check out all the cool things that we provide
+        </p>
+        <hr>
       </div>
 
-
-      <div class="container">
-        <div class="search-container">
-          <div>
-            <input type="text" placeHolder="Search Movie">
-            <button class="btn search-btn">Search</button>
-          </div>
-          <div>
-
-
-<div>
-<select name="genre" id="genres">
-  <option value="Action">Action</option>
-  <option value="Drama">Drama</option>
-  <option value="Fantasy">Fantasy</option>
-  <option value="Comedy">Comedy</option>
-</select>
-
-<input type="number" class="year" placeholder="Year" id="year-input">
-    <label for="rating">Rate your experience:</label>
-<select id="rating" name="rating">
-  <option value="1">&#9733;</option>
-  <option value="2">&#9733;&#9733;</option>
-  <option value="3">&#9733;&#9733;&#9733;</option>
-  <option value="4">&#9733;&#9733;&#9733;&#9733;</option>
-  <option value="5">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
-</select>
-
-
-<div id="results"></div>
-
-<script id="results-movies" type="text/x-handlebars-template">
-    {{#each this}}
-    <div class="result">
-        <img class="img" src="{{this.thumbnail}}">
-        <p class="title">{{this.title}}</p>
-        {{/each}}
+      <div class="movie-collection"></div>
     </div>
-</script>
+  </div>
 
-    <script src="model.js"></script>
-    <script src="render.js"></script>
-    <script src="main.js"></script>
+  <script id="movieTemplate" type="text/x-handlebars-template">
+    <div class="movie">
+      <div class="thumbnail">
+        <img src="{{this.thumbnail}}"/>
+      </div>
+      <div class="details">
+        <div class="title">{{this.title}}</div>
+        <div class="year">{{this.year}}</div>
+      </div>
+    </div>
+  </script>
+
+  <script src="model.js"></script>
+  <script src="render.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
