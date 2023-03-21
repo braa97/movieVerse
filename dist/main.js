@@ -6,7 +6,7 @@ const renderer = new Renderer();
 window.onload = function () {
   movieModel.getAllMovies(null , null)
   .then((moviesData) => {
-    render.renderMovies(moviesData);
+    renderer.render(moviesData);
     });
 }
 
@@ -17,7 +17,7 @@ $('.search-btn').on('click', function(){
   
     movieModel.getAllMovies(category,year)
     .then((moviesData) => {
-      render.renderMovies(moviesData);
+      renderer.render(moviesData);
     });
 })
 
