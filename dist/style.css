@@ -3,6 +3,11 @@ body {
   padding: 0;
 }
 
+#input-movie {
+  margin-top: 10px;
+  width: 15%;
+}
+
 .container {
   display: grid;
   grid-template-rows: 7%;
@@ -156,8 +161,4 @@ body {
 .year {
   font-size: 0.85rem;
   color: #919191;
-}
-
-.fa-popcorn {
-  color: red;
 }

@@ -13,7 +13,7 @@ class MovieQuerys {
   }
 
   getMovieByName(movieName) {
-    return Movie.find({ title: movieName });
+    return Movie.findOne({ title: movieName });
   }
 }
 
