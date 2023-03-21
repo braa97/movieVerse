@@ -1,4 +1,4 @@
-class model {
+class Model {
   constructor() {
     this._moviesData = [];
   }
@@ -15,5 +15,6 @@ class model {
 
   get allData(){
     return this._moviesData
+    
   }
 }

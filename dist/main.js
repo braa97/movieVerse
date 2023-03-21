@@ -1,5 +1,5 @@
-const movieModel = new model();
-const render = new renderer();
+const movieModel = new Model();
+const renderer = new Renderer();
 
 
 
@@ -33,3 +33,5 @@ $('.search-btn').on('click', function(){
 //   console.log(history)
 //   alert(movieId)
 // })
+
+
