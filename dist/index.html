@@ -28,21 +28,25 @@
         <div class="search-container">
           <div>
             <input type="text" placeHolder="Search Movie">
-            <button class="btn search-btn">Search</button>
+            <button class=" search-btn">Search</button>
           </div>
           <div>
 
 
-<div>
-<select name="genre" id="genres">
-  <option value="Action">Action</option>
-  <option value="Drama">Drama</option>
-  <option value="Fantasy">Fantasy</option>
-  <option value="Comedy">Comedy</option>
-</select>
+<div class="categorySelect">
+
+  <select  name="genre" id="genres" >
+    <option value="">Select</option>
+    <option value="Action">Action</option>
+    <option value="Drama">Drama</option>
+    <option value="Fantasy">Fantasy</option>
+    <option value="Comedy">Comedy</option>
+  </select>
+
 
 <input type="number" class="year" placeholder="Year" id="year-input">
-    <label for="rating">Rate your experience:</label>
+
+<label for="rating">Rate your experience:</label>
 <select id="rating" name="rating">
   <option value="1">&#9733;</option>
   <option value="2">&#9733;&#9733;</option>
@@ -51,16 +55,18 @@
   <option value="5">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
 </select>
 
+</div>
 
 <div id="results"></div>
 
 <script id="results-movies" type="text/x-handlebars-template">
     {{#each this}}
-    <div class="result">
+    <div class="result" data-id="{{this._id}}">
         <img class="img" src="{{this.thumbnail}}">
-        <p class="title">{{this.title}}</p>
-        {{/each}}
+        <div class="title">{{this.title}}</div>
     </div>
+        {{/each}}
+    
 </script>
 
     <script src="model.js"></script>
