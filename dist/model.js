@@ -14,6 +14,18 @@ class Model {
       });
   }
 
+  getMovieByName(movieName){
+    this._movie = [];
+    return $.get(`/movie/${movieName}`)
+    .then((movie)=> {
+      this._movie.push(movie);
+      console.log(this._movie);
+    })
+  }
+
+  get movie(){
+    return this._movie;
+  }
 
   get allData(){
     return this._moviesData
