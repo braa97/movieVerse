@@ -5,15 +5,13 @@ const movieSchema = new Schema ({
     title : String,
     description : String,
     thumbnail : String ,
-    rating : [ratingSchema],
+    rating : String,
+    usersRating : String,
+    raters : Number,
     year : Number ,
     trailer : String,
-    category : [String]
+    genre : [String]
 })
-
-
-
-
 
 const Movie = mongoose.model("movie", movieSchema)
 module.exports = Movie
