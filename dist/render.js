@@ -1,11 +1,11 @@
-class renderer {
+class Renderer {
     constructor() {}
     
-  renderApts(movies) {
-    $("#results").empty();
-    const source = $(`#results-movies`).html();
+  render(movies) {
+    $("#movieTemplate").empty();
+    const source = $(`#movie-collection`).html();
     const template = Handlebars.compile(source);
     const newHtml = template(movies);
-    $(`#results`).append(newHtml);
+    $(`#movieTemplate`).append(newHtml);
   }
 }

@@ -1,4 +1,4 @@
-class model {
+class Model {
   constructor() {
     this.moviesData = [];
   }
