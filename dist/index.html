@@ -24,9 +24,14 @@
         <div class="nav-items">Favorite</div>
         <div class="nav-items">History</div>
       </div>
+      
+
+      
+
+      
       <div class="user"><i class="fa-solid fa-user"></i></div>
     </div>
-
+   
     <div class="main-content">
 
       <div class="intro">
@@ -35,12 +40,46 @@
           you can also add movies to your favourite list and browse movies based on your own preferences, fell free to check out all the cool things that we provide
         </p>
         <hr>
+        <div class="categorySelect">
+
+          <select  name="genre" id="genres" >
+            <option value="">Select</option>
+            <option value="Action">Action</option>
+            <option value="Drama">Drama</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Comedy">Comedy</option>
+          </select>
+        
+        
+        <input type="number" placeholder="Year" id="year-input">
+        
+        <label for="rating">Rate your experience:</label>
+        <select id="rating" name="rating">
+          <option value="">Rate</option>
+          <option value="1">1+</option>
+          <option value="2">2+</option>
+          <option value="3">3+</option>
+          <option value="4">4+</option>
+          <option value="5">5+</option>
+          <option value="6">6+</option>
+          <option value="7">7+</option>
+          <option value="8">8+</option>
+          <option value="9">9+</option>
+        </select>
+        <div>
+          <input id="input-movie" type="text" placeHolder="Search Movie">
+          <button class="search-btn">Search</button>
+        </div>
+        </div>
       </div>
 
       <div class="movie-collection"></div>
     </div>
   </div>
 
+
+
+  
   <script id="movieTemplate" type="text/x-handlebars-template">
     {{#each this}}
     <div class="movie">

@@ -11,7 +11,7 @@ router.get("/movies", function (req, res) {
   const genre = req.query.genre;
 
   if (rating) {
-    querys.rating = rating;
+    querys.rating = {$gt: rating};
   }
   if (year) {
     querys.year = year;
@@ -31,8 +31,7 @@ router.get("/movies", function (req, res) {
 
 router.get("/movie/:movieName", function (req, res) {
   const movie = req.params.movieName;
-  
-  movieQuery.getMovie(movie)
+  movieQuery.getMovieByName(movie)
     .then((data) => {
       res.status(200).send(data);
     })

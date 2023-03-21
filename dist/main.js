@@ -4,21 +4,32 @@ const render = new Renderer();
 
 
 window.onload = function () {
-  movieModel.getAllMovies()
+  movieModel.getAllMovies("", "" , "")
   .then(() => {
     render.renderData(movieModel.allData);
     });
 }
 
 $('.search-btn').on('click', function(){
-  
+  const movie = $('#input-movie').val();
+  const year = $('#year-input').val()
+  const rating = $('#rating option:selected').val();
   const category = $('#genres option:selected').val()
-  const year = $('.year').val()
   
-    movieModel.getAllMovies(category,year)
-    .then((moviesData) => {
-      render.renderData(moviesData);
+
+  if(movie){
+    movieModel.getMovieByName(movie)
+    .then(() => {
+      render.renderData(movieModel.movie);
+    })
+  }
+  else{
+    movieModel.getAllMovies(rating,category,year)
+    .then(() => {
+      render.renderData(movieModel.allData);
     });
+  }
+    
 })
 
 
