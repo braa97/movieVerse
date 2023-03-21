@@ -5,8 +5,9 @@ class MovieQuerys {
 
   getMovies(query) {
     if (query) {
-      return Movie.find(query);
-    } else {
+      return Movie.find(query)
+    }
+    else {
       return Movie.find({});
     }
   }

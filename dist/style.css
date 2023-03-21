@@ -15,7 +15,8 @@ body {
   display: grid;
   grid-template-columns: 15% 70% 15%;
   grid-template-areas: "l nbl u";
-  background-color: #2b2929;
+  /* background-color: #2b2929; */
+  background-color: #0a0d28 ;
   /* height: 90px; */
 }
 
@@ -46,7 +47,7 @@ body {
 
 .nav-items:hover {
   cursor: pointer;
-  background-color: #3b3939
+  background-color: #171c47
 }
 
 .user {
@@ -89,6 +90,7 @@ body {
 .intro h1 {
   font-family: 'Oswald', sans-serif;
   font-size: 2.5rem;
+  color: #0a0d28;
 }
 
 .intro h1 > b {
@@ -114,7 +116,8 @@ body {
 }
 
 .movie {
-  background-color: #2b2929;
+  background-color: #0a0d28;
+  /* background-color: #2b2929; */
   width: 240px;
   height: 435px;
   box-shadow: 2px 2px 10px;
@@ -153,4 +156,8 @@ body {
 .year {
   font-size: 0.85rem;
   color: #919191;
+}
+
+.fa-popcorn {
+  color: red;
 }

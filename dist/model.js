@@ -11,8 +11,7 @@ class Model {
         });
       });
   }
-
-
+  
   get allData(){
     return this._moviesData
   }

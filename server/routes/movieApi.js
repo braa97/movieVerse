@@ -11,7 +11,7 @@ router.get("/movies", function (req, res) {
   const genre = req.query.genre;
 
   if (rating) {
-    querys.rating = rating;
+    querys.rating = {$gt: rating}
   }
   if (year) {
     querys.year = year;

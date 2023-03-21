@@ -22,16 +22,3 @@ $('.search-btn').on('click', function(){
 })
 
 
-
-
-
-
-// const history = []
-// $("#results").on('click','img', function() {
-//   const movieId = $(this).closest('.result')
-//   history.push(movieId)
-//   console.log(history)
-//   alert(movieId)
-// })
-
-
