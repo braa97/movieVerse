@@ -53,16 +53,16 @@
 
 
 <div id="results"></div>
+
 <script id="results-movies" type="text/x-handlebars-template">
-    {{#each movie}}
+    {{#each this}}
     <div class="result">
-        <img class="img" src="{{thumbnail}}">
-        <p class="title">{{title}}</p>
+        <img class="img" src="{{this.thumbnail}}">
+        <p class="title">{{this.title}}</p>
         {{/each}}
     </div>
-
 </script>
-        </div>
+
     <script src="model.js"></script>
     <script src="render.js"></script>
     <script src="main.js"></script>

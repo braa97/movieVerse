@@ -17,5 +17,5 @@ app.use('/', movieApi)
 
 const port = 4000
 app.listen(port, function () {
-    console.log(`Running on port ${port}`)
+    console.log(`Running on port http://localhost:${port}`)
 })

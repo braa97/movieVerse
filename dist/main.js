@@ -1,6 +1,6 @@
 const movieModel = new model();
-const renderer = new render();
+const render = new renderer();
 
 movieModel.getAllMovies().then((moviesData) => {
-  renderer.renderApts(moviesData);
+  render.renderApts(moviesData);
 });
