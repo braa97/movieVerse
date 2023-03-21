@@ -25,6 +25,5 @@ router.get('/movies/:movieName', function (req, res) {
       });
 })
 
-router.get('/movies/:braaisnoob', function (req, res){})
 
 module.exports = router;
