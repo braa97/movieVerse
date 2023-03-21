@@ -42,6 +42,7 @@
   </div>
 
   <script id="movieTemplate" type="text/x-handlebars-template">
+    {{#each this}}
     <div class="movie">
       <div class="thumbnail">
         <img src="{{this.thumbnail}}"/>
@@ -51,6 +52,7 @@
         <div class="year">{{this.year}}</div>
       </div>
     </div>
+    {{/each}}
   </script>
 
   <script src="model.js"></script>

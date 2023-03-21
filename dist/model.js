@@ -3,8 +3,8 @@ class Model {
     this._moviesData = [];
   }
 
-  getAllMovies(category , year) {
-      return $.get(`/movies?genre=${category}&year=${year}`)
+  getAllMovies() {
+      return $.get(`/movies`)
       .then((moviesDataResult) => {
         moviesDataResult.forEach((element) => {
           this._moviesData.push(element);
@@ -15,6 +15,5 @@ class Model {
 
   get allData(){
     return this._moviesData
-    
   }
 }
