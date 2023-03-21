@@ -25,6 +25,6 @@ router.get('/movies/:movieName', function (req, res) {
       });
 })
 
-router.get('/movies/:movieId', function (req, res){})
+router.get('/movies/:yazan_is_noob', function (req, res){})
 
 module.exports = router;
