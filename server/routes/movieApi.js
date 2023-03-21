@@ -25,6 +25,4 @@ router.get('/movies/:movieName', function (req, res) {
       });
 })
 
-router.get('/movies/:movieId', function (req, res){})
-
 module.exports = router;
