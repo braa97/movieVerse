@@ -1,15 +1,19 @@
-const Movie = require('../models/movieSchema');
+const Movie = require("../models/movieSchema");
 
 class MovieQuerys {
-    constructor(){}
+  constructor() {}
 
-    getMovies() {
-        return  Movie.find({})
+  getMovies(query) {
+    if (query) {
+      return Movie.find(query);
+    } else {
+      return Movie.find({});
     }
+  }
 
-    getMovieByName(movieName) {
-        return Movie.find({title : movieName })
-    }
+  getMovieByName(movieName) {
+    return Movie.find({ title: movieName });
+  }
 }
 
 module.exports = MovieQuerys;
