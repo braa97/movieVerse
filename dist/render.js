@@ -1,6 +1,6 @@
 class renderer {
-    constructor() {}
-    
+  constructor() {}
+  
   renderApts(movies) {
     $("#results").empty();
     const source = $(`#results-movies`).html();
