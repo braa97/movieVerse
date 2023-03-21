@@ -107,18 +107,23 @@ body {
   grid-area: m;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 10px;
+  /* grid-gap: 10px; */
   margin: 10px;
+  justify-content: center;
+  align-items: start;
 }
 
 .movie {
   background-color: #2b2929;
-  height: 375px;
-  width: 210px;
+  width: 240px;
+  height: 435px;
   box-shadow: 2px 2px 10px;
   display: grid;
-  grid-template-rows: 315px;
+  grid-template-rows: 365px;
   grid-template-areas: "img" "d";
+  align-self: center;
+  justify-self: center;
+  margin-bottom: 50px;
 }
 
 .thumbnail {
@@ -126,8 +131,8 @@ body {
 }
 
 .thumbnail img {
-  width: 210px;
-  height: 315px;
+  width: 240px;
+  height: 360px;
 }
 
 .details {
@@ -142,6 +147,7 @@ body {
   font-size: 0.95rem;
   font-weight: 700;
   color: #ffffff;
+  margin-top: 5px;
 }
 
 .year {

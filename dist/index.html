@@ -37,21 +37,21 @@
         <hr>
       </div>
 
-      <div class="movie-collection"> <!--This should be constant, this is the start of the collection-->
-
-        <div class="movie">
-          <div class="thumbnail">
-            <img src="../resources/movie.jpg"/>
-          </div>
-          <div class="details">
-            <div class="title">The Shawshank Redemption</div>
-            <div class="year">1997</div>
-          </div>
-        </div>
-
-      </div> <!--This is the end of collection-->
+      <div class="movie-collection"></div>
     </div>
   </div>
+
+  <script id="movieTemplate" type="text/x-handlebars-template">
+    <div class="movie">
+      <div class="thumbnail">
+        <img src="{{this.thumbnail}}"/>
+      </div>
+      <div class="details">
+        <div class="title">{{this.title}}</div>
+        <div class="year">{{this.year}}</div>
+      </div>
+    </div>
+  </script>
 
   <script src="model.js"></script>
   <script src="render.js"></script>
