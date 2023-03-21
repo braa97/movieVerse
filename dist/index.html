@@ -41,9 +41,17 @@
     </div>
   </div>
 
-  <div class="hawawa">
-    <div class="yawza"></div>
-  </div>
+  <script id="movieTemplate" type="text/x-handlebars-template">
+    <div class="movie">
+      <div class="thumbnail">
+        <img src="{{this.thumbnail}}"/>
+      </div>
+      <div class="details">
+        <div class="title">{{this.title}}</div>
+        <div class="year">{{this.year}}</div>
+      </div>
+    </div>
+  </script>
 
   <script src="model.js"></script>
   <script src="render.js"></script>
