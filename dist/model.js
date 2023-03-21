@@ -5,7 +5,7 @@ class model {
 
   getAllMovies() {
     return $.get("/movies").then((moviesDataResult) => {
-      this.moviesData = moviesDataResult;
+      this.moviesData.push(moviesDataResult);
       return this.moviesData;
     });
   }
