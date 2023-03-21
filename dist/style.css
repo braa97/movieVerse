@@ -41,6 +41,7 @@ body {
   align-items: center;
   color: white;
   font-size: 1.5rem;
+  font-family: 'Oswald', sans-serif;
 }
 
 .nav-items:hover {
@@ -76,21 +77,74 @@ body {
 .main-content {
   grid-area: mc;
   display: grid;
-  grid-template-rows: 10%;
+  grid-template-rows: 0.4fr;
   grid-template-areas: "i" "m";
 }
 
 .intro {
   grid-area: i;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
 }
 
 .intro h1 {
-  margin-top: 4%;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.5rem;
 }
 
 .intro h1 > b {
   font-family: 'Anton', sans-serif;
+}
+
+.intro p {
+  font-size: 1.3rem;
+}
+
+.intro hr {
+  width: 80%;
+}
+
+.movie-collection {
+  grid-area: m;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+  margin: 10px;
+}
+
+.movie {
+  background-color: #2b2929;
+  height: 375px;
+  width: 210px;
+  box-shadow: 2px 2px 10px;
+  display: grid;
+  grid-template-rows: 315px;
+  grid-template-areas: "img" "d";
+}
+
+.thumbnail {
+  grid-area: img;
+}
+
+.thumbnail img {
+  width: 210px;
+  height: 315px;
+}
+
+.details {
+  grid-area: d;
+  display: grid;
+  grid-template-rows: 40px;
+  grid-template-areas: "t" "y";
+  margin-left: 5px;
+}
+
+.title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.year {
+  font-size: 0.85rem;
+  color: #919191;
 }
