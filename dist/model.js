@@ -7,9 +7,8 @@ class Model {
   getAllMovies(rating, category, year,page ,limit=5) {
     this._moviesData = [];
       return $.get(`/home/movies?rating=${rating}&genre=${category}&year=${year}&page=${page}&limit=${limit}`)
-  
       .then((moviesDataResult) => {
-        moviesDataResult.data.forEach((element) => {
+        moviesDataResult.forEach((element) => {
           this._moviesData.push(element);
         });
       });
