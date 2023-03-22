@@ -170,11 +170,18 @@ body {
   margin-left: 20px;
 } */
 
+.movie-main-container {
+  display: grid;
+  grid-template-rows: 7%;
+  grid-template-areas: "n" "mc";
+  height: 100vh;
+}
+
 .movie-content {
   grid-area: mc;
   display: grid;
   grid-template-rows: 70%;
-  grid-template-areas: "md" "rr";
+  grid-template-areas: "md" "yt" "rr";
 }
 
 .movie-details {
@@ -263,11 +270,38 @@ body {
 
 .movie-recommendation {
   grid-area: recommended;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  
 }
 
+
+.movie-recommendation-image-container {
+  width: 180px;
+  height: 270px;
+  justify-self: center;
+  align-self: center;
+  border: 3px solid #0a0d28;
+}
+
+.movie-recommendation-image-container img {
+  width: 180px;
+  height: 270px;
+
+}
+
+.trailer-window {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: aqua;
+
+}
 
 .movie-review-rating {
   grid-area: rr;
   display: grid;
+  background-color: blueviolet;
 }
 
