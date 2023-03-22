@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/2d46c73150.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../style.css" />
-    <script src="/handlebars/dist/handlebars.js"></script>
-    <script src="/jquery/dist/jquery.js"></script>
-    <title>Movie</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/2d46c73150.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../style.css" />
+  <script src="/handlebars/dist/handlebars.js"></script>
+  <script src="/jquery/dist/jquery.js"></script>
+  <title>Movie</title>
 </head>
+
 <body>
+  <div class="movie-main-container">
 
-    <div class="movie-main-container">
-
-        <div class="movie-navbar">
-          <div class="logo"><i class="fa-solid fa-film"></i>&nbsp;movieVerse</div>
-          <div class="links">
-            <div class="nav-items"><i class="fa-solid fa-house"></i>&nbsp;Home</div>
-            <div class="nav-items"><i class="fa-brands fa-safari"></i>&nbsp;Browse</div>
-            <div class="nav-items"><i class="fa-solid fa-star"></i>&nbsp;Favorite</div>
-            <div class="nav-items"><i class="fa-solid fa-clock-rotate-left"></i>&nbsp;History</div>
-          </div>
-          <div class="user"><i class="fa-solid fa-user"></i></div>
-        </div>
-       
-        </div>
+    <div class="movie-navbar">
+      <div class="logo"><i class="fa-solid fa-film"></i>&nbsp;movieVerse</div>
+      <div class="links">
+        <div class="nav-items"><i class="fa-solid fa-house"></i>&nbsp;Home</div>
+        <div class="nav-items"><i class="fa-brands fa-safari"></i>&nbsp;Browse</div>
+        <div class="nav-items"><i class="fa-solid fa-star"></i>&nbsp;Favorite</div>
+        <div class="nav-items"><i class="fa-solid fa-clock-rotate-left"></i>&nbsp;History</div>
       </div>
+      <div class="user"><i class="fa-solid fa-user"></i></div>
+    </div>
 
-      <script id="movie-template" type="text/x-handlebars-template">
+    <div class="movie-main-container"></div>
+  </div>
 
+  <script id="movie-template" type="text/x-handlebars-template">
+    
         <div class="movie-details" data-id="{{movie._id}}">
           <div class="movie-image-container"><img src="{{movie.image}}"/></div>
           <div class="movie-data">
@@ -42,7 +43,7 @@
               <div class="movie-description"><b>Description:</b><p>{{movie.description}}</p></div>
               <div class="movie-rating">
                 <a href="https://www.imdb.com/title/{{movie.imdbid}}/"><img src="../resources/logo-imdb.svg"></a>
-                {{movie.rating}}&nbsp;&nbsp;<i class="fa-solid fa-star"></i>
+                4.2&nbsp;&nbsp;<i class="fa-solid fa-star"></i>
               </div>
           </div>
           <div class="movie-recommendation"></div>
@@ -52,10 +53,7 @@
         <div class="movie-review-rating">
           <div class="review-label"><h1>Reviews</h1></div>
           <div class="reviews-container">
-            <div class="review">
-              <div class="reviewer-name">Baraa Knaane</div>
-              <div class="review-content">stam text for stuff</div>
-            </div>
+
           </div>
         </div>
         <div class="trailer-window"><iframe class="youtube-video" src="{{movie.trailer}}"></div>
@@ -63,16 +61,16 @@
 
       </script>
 
-      <script id="review-template" type="text/x-handlebars-template">
 
-        <div class="movie-recommendation-image-container">
-          <img src="{{this.image}}">
-        </div>
+  <script id="review-template" type="text/x-handlebars-template">
+    <div class="movie-recommendation-image-container">
+      <img src="{{this.image}}">
+    </div>
+  </script>
 
-      </script>
-
-    <script src="../model.js"></script>
-    <script src="../render.js"></script>
-    <script src="main.js"></script>
+  <script src="../model.js"></script>
+  <script src="../render.js"></script>
+  <script src="main.js"></script>
 </body>
+
 </html>

@@ -16,7 +16,9 @@ mongoose.connect("mongodb://127.0.0.1:27017/movieVerse", {
 }).catch((err)=> console.log(err))
 
 app.use('/home', homeApi)
-app.use('/movie', movieApi)
+app.use('/movie', movieApi, function(req, res) {
+  res.sendFile(path.join(__dirname, '../../dist/movie'))
+})
 
 const port = 4000
 app.listen(port, function () {

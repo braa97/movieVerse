@@ -22,6 +22,13 @@ class Model {
     })
   }
 
+getMovieById(movieId) {
+  this._moviesData = [];
+  return $.get(`/movie/${movieId}`)
+  .then((movie) => {
+    this._moviesData.push(movie);
+  })
+}
 
   addToFavorite(movieId) {
     return $.post(`movie` , movieId)

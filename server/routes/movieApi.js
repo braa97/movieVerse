@@ -4,14 +4,11 @@ const path = require('path')
 const MovieQuerys = require("../utilites/databaseQuerys");
 const movieQuery = new MovieQuerys();
 
-router.use("/", function (req, res) {
-  res.sendFile(path.join(__dirname, '../../dist/movie'))
-});
-
-router.get("/", function (req, res) {
-  let movieId = req.query.id
+router.get("/:id", function (req, res) {
+  let movieId = req.params.id
   movieQuery.getMovieById(movieId)
   .then((data) => {
+    console.log(data);
     res.status(200).send(data);
   })
   .catch((err) => {

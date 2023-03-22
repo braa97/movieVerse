@@ -10,10 +10,18 @@ class Renderer {
   }
 
   renderOneMovie(movie) {
-    $(".movie-content").empty();
-    const source = $(`#movie-template`).html();
+    $(".movie-main-container").empty();
+    const source = $('#movie-template').html();
     const template = Handlebars.compile(source);
-    const newHtml = template(movie);
-    $(`.movie-content`).append(newHtml);
+    const newHtml = template({movie});
+    $('.movie-main-container').append(newHtml);
+  }
+
+  renderReview(reviews) {
+    $(".movie-main-container").empty();
+    const source = $('#review-template').html();
+    const template = Handlebars.compile(source);
+    const newHtml = template({reviews});
+    $('.movie-main-container').append(newHtml);
   }
 }

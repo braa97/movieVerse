@@ -22,7 +22,6 @@ $('.search-btn').on('click', function(){
   const rating = $('#rating option:selected').val();
   const category = $('#genres option:selected').val()
   
-
   if(movie){
     movieModel.getMovieByName(movie)
     .then(() => {
