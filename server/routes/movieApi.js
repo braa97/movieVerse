@@ -15,4 +15,15 @@ router.get("/:id", function (req, res) {
   });
 });
 
+router.get(`/genre/:genre`, function(req, res) {
+  let genre = req.params.genre
+  movieQuery.getTopFourMovies(genre)
+  .then((data) => {
+    res.status(200).send(data);
+  })
+  .catch((err) => {
+    res.status(400).send(err);
+  });
+})
+
 module.exports = router;

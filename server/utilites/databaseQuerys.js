@@ -19,6 +19,10 @@ class MovieQuerys {
   getMovieById(movieId) {
     return Movie.findById(movieId);
   }
+
+  getTopFourMovies(genre) {
+    return Movie.find({genre: genre}).limit(4);
+  }
 }
 
 module.exports = MovieQuerys;

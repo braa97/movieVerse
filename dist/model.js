@@ -6,12 +6,12 @@ class Model {
   }
   getAllMovies(rating, category, year,page ,limit=5) {
     this._moviesData = [];
-      return $.get(`/home/movies?rating=${rating}&genre=${category}&year=${year}&page=${page}&limit=${limit}`)
-      .then((moviesDataResult) => {
-        moviesDataResult.forEach((element) => {
-          this._moviesData.push(element);
-        });
+    return $.get(`/home/movies?rating=${rating}&genre=${category}&year=${year}&page=${page}&limit=${limit}`)
+    .then((moviesDataResult) => {
+      moviesDataResult.forEach((element) => {
+        this._moviesData.push(element);
       });
+    });
   }
 
   getMovieByName(movieName){
@@ -22,13 +22,24 @@ class Model {
     })
   }
 
-getMovieById(movieId) {
-  this._moviesData = [];
-  return $.get(`/movie/${movieId}`)
-  .then((movie) => {
-    this._moviesData.push(movie);
-  })
-}
+  getMovieById(movieId) {
+    this._moviesData = [];
+    return $.get(`/movie/${movieId}`)
+    .then((movie) => {
+      this._moviesData.push(movie);
+    })
+  }
+
+  getRecommendedMovies(genre) {
+    this._moviesData = [];
+    return $.get(`/movie/genre/${genre}`)
+    .then((movies) => {
+      movies.forEach((movie) => {
+        console.log(movie);
+        this._moviesData.push(movie);
+      })
+    })
+  }
 
   addToFavorite(movieId) {
     return $.post(`movie` , movieId)
@@ -43,7 +54,6 @@ getMovieById(movieId) {
         this._historyData.push(movie);
     })
   }
-
 
   get history(){
     return this._historyData

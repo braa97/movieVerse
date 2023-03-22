@@ -78,9 +78,11 @@
     </script>
 
     <script id="recommended-movies" type="text/x-handlebars-template">
+      {{#each this}}
       <div class="movie-recommendation-image-container">
-        <img class="youtube-video" src="../resources/test.jpg" />
+        <img src="{{this.thumbnail}}" />
       </div>
+      {{/each}}
     </script>
 
     <script id="review-template" type="text/x-handlebars-template">

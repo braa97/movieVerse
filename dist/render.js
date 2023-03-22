@@ -17,7 +17,13 @@ class Renderer {
     $('.movie-content').append(newHtml);
   }
 
-  renderRecommendedMovie() {}
+  renderRecommendedMovie(movies) {
+    $(".movie-recommendation").empty();
+    const source = $('#recommended-movies').html();
+    const template = Handlebars.compile(source);
+    const newHtml = template(movies);
+    $('.movie-recommendation').append(newHtml);
+  }
 
   renderReview(reviews) {
     $(".movie-main-container").empty();
