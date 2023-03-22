@@ -40,7 +40,7 @@
           you can also add movies to your favourite list and browse movies based on your own preferences, fell free to check out all the cool things that we provide
         </p>
         <hr>
-        <div class="categorySelect">
+        <!-- <div class="categorySelect">
 
           <select  name="genre" id="genres" >
             <option value="">Select</option>
@@ -70,7 +70,7 @@
           <input id="input-movie" type="text" placeHolder="Search Movie">
           <button class="search-btn">Search</button>
         </div>
-        </div>
+        </div> -->
       </div>
 
       <div class="movie-collection"></div>
@@ -82,7 +82,7 @@
   
   <script id="movieTemplate" type="text/x-handlebars-template">
     {{#each this}}
-    <div class="movie">
+    <div class="movie" data-id="{{this._id}}">
       <div class="thumbnail">
         <img src="{{this.thumbnail}}"/>
       </div>
@@ -94,8 +94,8 @@
     {{/each}}
   </script>
 
-  <script src="model.js"></script>
-  <script src="render.js"></script>
+  <script src="../model.js"></script>
+  <script src="../render.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
