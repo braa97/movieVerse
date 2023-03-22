@@ -1,10 +1,21 @@
 const movieModel = new Model();
 const render = new Renderer();
 
+
+let page  =1 
+const limit = 10
+
+function renderCurrentPage() {
+  const startIndex = (page - 1) * limit
+  const endIndex = startIndex + limit
+  const movies = movieModel.allData.slice(startIndex, endIndex)
+  render.renderData(movies)
+}
+
 window.onload = function () {
   movieModel.getAllMovies("", "" , "")
   .then(() => {
-    render.renderData(movieModel.allData);
+    renderCurrentPage()
     });
 }
 
@@ -22,9 +33,9 @@ $('.search-btn').on('click', function(){
     })
   }
   else{
-    movieModel.getAllMovies(rating,category,year)
+    movieModel.getAllMovies(rating,category,year,page,limit)
     .then(() => {
-      render.renderData(movieModel.allData);
+      renderCurrentPage()
     });
   }
 })
@@ -49,3 +60,20 @@ $('.movie-collection').on('click','.fa-heart' ,function(){
     
   })
 
+$('.prev-page-btn').on('click', function() {
+  if (page > 1) {
+      page--
+   renrenderCurrentPage(data.allData)
+  }
+})
+
+$('.next-page-btn').on('click', function() {
+  const numPages = Math.ceil(movieModel.allData.length / limit);
+  if (page < numPages) {
+    page++;
+    // $.get(`/movies?rating=${rating}&genre=${category}&year=${year}&page=${page}&limit=${limit}`) 
+    //   .then((data) => {
+          renrenderCurrentPage(data)
+      // })
+  }
+});
