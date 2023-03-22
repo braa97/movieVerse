@@ -18,7 +18,7 @@ $('.search-btn').on('click', function(){
   if(movie){
     movieModel.getMovieByName(movie)
     .then(() => {
-      render.renderData(movieModel.movie);
+      render.renderData(movieModel.allData);
     })
   }
   else{

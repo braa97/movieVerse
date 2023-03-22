@@ -15,16 +15,11 @@ class Model {
   }
 
   getMovieByName(movieName) {
-    this._movie = [];
+    this._moviesData = [];
     return $.get(`/home/${movieName}`)
     .then((movie)=> {
-      this._movie.push(movie);
-      console.log(this._movie);
+      this._moviesData.push(movie);
     })
-  }
-
-  get movie(){
-    return this._movie;
   }
 
   get allData(){

@@ -10,6 +10,7 @@ const movieSchema = new Schema ({
     raters : Number,
     year : Number ,
     trailer : String,
+    imdbid: String,
     genre : [String]
 })
 
