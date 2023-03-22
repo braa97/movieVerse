@@ -8,8 +8,6 @@ body {
   width: 15%;
 }
 
-
-
 .container {
   display: grid;
   grid-template-rows: 7%;
@@ -187,8 +185,8 @@ body {
 .movie-content {
   grid-area: mc;
   display: grid;
-  grid-template-rows: 70%;
-  grid-template-areas: "md" "yt" "rr";
+  grid-template-rows: 1.5fr 1fr 0.3fr;
+  grid-template-areas: "md" "yt-rr";
 }
 
 .movie-details {
@@ -298,12 +296,11 @@ body {
 
 }
 
-.trailer-window {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: aqua;
-
+.movie-trailer-reviews-container {
+  grid-area: yt-rr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "rr yt";
 }
 
 .movie-review-rating {
@@ -311,4 +308,13 @@ body {
   display: grid;
   background-color: blueviolet;
 }
+
+.trailer-window {
+  grid-area: yt;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+
 
