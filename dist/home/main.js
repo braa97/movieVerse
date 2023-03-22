@@ -1,8 +1,6 @@
 const movieModel = new Model();
 const render = new Renderer();
 
-let page  =1 
-const limit = 10
 
 function renderCurrentPage() {
   const startIndex = (page - 1) * limit
