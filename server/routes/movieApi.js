@@ -8,7 +8,6 @@ router.get("/:id", function (req, res) {
   let movieId = req.params.id
   movieQuery.getMovieById(movieId)
   .then((data) => {
-    console.log(data);
     res.status(200).send(data);
   })
   .catch((err) => {

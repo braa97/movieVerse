@@ -10,12 +10,14 @@ class Renderer {
   }
 
   renderOneMovie(movie) {
-    $(".movie-main-container").empty();
+    $(".movie-content").empty();
     const source = $('#movie-template').html();
     const template = Handlebars.compile(source);
     const newHtml = template({movie});
-    $('.movie-main-container').append(newHtml);
+    $('.movie-content').append(newHtml);
   }
+
+  renderRecommendedMovie() {}
 
   renderReview(reviews) {
     $(".movie-main-container").empty();

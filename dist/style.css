@@ -149,6 +149,7 @@ body {
   margin-left: 85%;
   cursor: pointer;
 }
+
 .details {
   grid-area: d;
   display: grid;
@@ -234,7 +235,7 @@ body {
   grid-area: name;
   /* margin-left: 20px; */
   align-self: end;
-  justify-self: end;
+  justify-self: start;
   line-height: 42px;
 }
 
@@ -368,6 +369,3 @@ body {
   margin-right: 5%;
 
 }
-
-
-
