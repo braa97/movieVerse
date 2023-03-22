@@ -4,12 +4,12 @@ class Model {
     this._favoriteMovies = [];
     this._historyData = [];
   }
-
-  getAllMovies(rating,category ,year) {
+  getAllMovies(rating, category, year,page ,limit=5) {
     this._moviesData = [];
-      return $.get(`/home/movies?rating=${rating}&genre=${category}&year=${year}`)
+      return $.get(`/home/movies?rating=${rating}&genre=${category}&year=${year}&page=${page}&limit=${limit}`)
+  
       .then((moviesDataResult) => {
-        moviesDataResult.forEach((element) => {
+        moviesDataResult.data.forEach((element) => {
           this._moviesData.push(element);
         });
       });
