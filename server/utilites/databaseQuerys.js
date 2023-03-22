@@ -15,6 +15,10 @@ class MovieQuerys {
   getMovieByName(movieName) {
     return Movie.findOne({ title: movieName });
   }
+
+  getMovieById(movieId) {
+    return Movie.findById(movieId);
+  }
 }
 
 module.exports = MovieQuerys;

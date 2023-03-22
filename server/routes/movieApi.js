@@ -40,4 +40,17 @@ router.get("/movie/:movieName", function (req, res) {
     });
 });
 
+
+
+router.post("/movie" , function (req, res) {
+  let movieId = req.body.id;
+  movieQuery.getMovieById(movieId)
+  .then((data) => {
+    res.status(200).send(data);
+  })
+  .catch((err) => {
+    res.status(400).send(err);
+  });
+
+})
 module.exports = router;

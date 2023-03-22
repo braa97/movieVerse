@@ -29,7 +29,25 @@ $('.search-btn').on('click', function(){
       render.renderData(movieModel.allData);
     });
   }
-    
 })
 
+
+$('.movie-collection').on('click','.fa-heart' ,function(){
+    const movieId = $(this).closest('.movie').data()
+    movieModel.addToFavorite(movieId)
+    .then(() => {
+       render.renderData(movieModel.favorite)
+      //$(this).removeClass("fa-regular").addClass("fa-solid")
+    })
+  })
+
+
+  $('.movie-collection').on('click', '.movie' , function(){
+    const movieId = $(this).closest('.movie').data()
+    movieModel.addToHistory(movieId)
+    .then(() => {
+      console.log(movieModel.history)
+    })
+    
+  })
 

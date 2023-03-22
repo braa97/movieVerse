@@ -8,6 +8,8 @@ body {
   width: 15%;
 }
 
+
+
 .container {
   display: grid;
   grid-template-rows: 7%;
@@ -143,6 +145,12 @@ body {
   height: 360px;
 }
 
+.fa-heart {
+  color: red;
+  margin-top: 10%;
+  margin-left: 85%;
+  cursor: pointer;
+}
 .details {
   grid-area: d;
   display: grid;

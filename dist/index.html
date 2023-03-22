@@ -82,13 +82,15 @@
   
   <script id="movieTemplate" type="text/x-handlebars-template">
     {{#each this}}
-    <div class="movie">
+    <div class="movie" data-id="{{this._id}}">
       <div class="thumbnail">
         <img src="{{this.thumbnail}}"/>
       </div>
+      <i class="fa-regular fa-heart"></i>
       <div class="details">
         <div class="title">{{this.title}}</div>
         <div class="year">{{this.year}}</div>
+          <!-- <i class="fa-solid fa-heart"></i> -->
       </div>
     </div>
     {{/each}}
