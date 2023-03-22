@@ -3,12 +3,12 @@ class Model {
     this._moviesData = [];
     this._movie = [];
   }
-
-  getAllMovies(rating,category ,year) {
+  getAllMovies(rating, category, year,page ,limit=5) {
     this._moviesData = [];
-      return $.get(`/movies?rating=${rating}&genre=${category}&year=${year}`)
+    const url = `/movies?rating=${rating}&genre=${category}&year=${year}&page=${page}&limit=${limit}`;
+    return $.get(url)
       .then((moviesDataResult) => {
-        moviesDataResult.forEach((element) => {
+        moviesDataResult.data.forEach((element) => {
           this._moviesData.push(element);
         });
       });
