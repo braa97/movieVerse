@@ -20,7 +20,6 @@ class Model {
     return $.get(`/movie/${movieName}`)
     .then((movie)=> {
       this._moviesData.push(movie);
-      
     })
   }
 
