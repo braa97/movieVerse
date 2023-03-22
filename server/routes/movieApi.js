@@ -1,44 +1,16 @@
 const express = require("express");
 const router = express.Router();
-const axios = require("axios");
 const MovieQuerys = require("../utilites/databaseQuerys");
 const movieQuery = new MovieQuerys();
 
-router.get("/movies", function (req, res) {
-  const querys = {};
-  const rating = req.query.rating;
-  const year = req.query.year;
-  const genre = req.query.genre;
+router.get("/", function (req, res) {
+    res.sendFile(path.join(__dirname, '../../dist/movie', 'index.html'))
+  });
 
-  if (rating) {
-    querys.rating = {$gt: rating}
-  }
-  if (year) {
-    querys.year = year;
-  }
-  if (genre) {
-    querys.genre = genre;
-  }
+router.get("/:id", function (req, res) {
 
-  movieQuery.getMovies(querys)
-    .then((data) => {
-      res.status(200).send(data);
-    })
-    .catch((err) => {
-      res.status(400).send(err);
-    });
 });
 
-router.get("/movie/:movieName", function (req, res) {
-  const movie = req.params.movieName;
-  movieQuery.getMovieByName(movie)
-    .then((data) => {
-      res.status(200).send(data);
-    })
-    .catch((err) => {
-      res.status(400).send(err);
-    });
-});
 
 
 
