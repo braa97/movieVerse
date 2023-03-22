@@ -17,7 +17,7 @@
 
     <div class="movie-main-container">
 
-        <div class="navbar">
+        <div class="movie-navbar">
           <div class="logo"><i class="fa-solid fa-film"></i>&nbsp;movieVerse</div>
           <div class="links">
             <div class="nav-items"><i class="fa-solid fa-house"></i>&nbsp;Home</div>
@@ -28,44 +28,48 @@
           <div class="user"><i class="fa-solid fa-user"></i></div>
         </div>
        
-        <div class="movie-content">
-            <div class="movie-details">
-                <div class="movie-image-container"><img src="../resources/test.jpg"/></div>
-                <div class="movie-data">
-                    <div class="movie-title"><h1>The Lord of the Rings: The Fellowship of the Ring</h1></div>
-                    <div class="movie-year"><b>2002</b></div>
-                    <div class="movie-genre"><b>Action / Adventure / Drama / Fantasy</b></div>
-                    <div class="movie-description"><b>Description:</b><p>Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.</p></div>
-                    <div class="movie-rating">
-                      <a href="https://www.imdb.com/title/imdbid/"><img src="../resources/logo-imdb.svg"></a>
-                      4.2&nbsp;&nbsp;<i class="fa-solid fa-star"></i>
-                    </div>
-                </div>
-                <div class="movie-recommendation"> 
-
-                  <div class="movie-recommendation-image-container">
-                    <img src="../resources/test.jpg">
-                  </div>
-                  <div class="movie-recommendation-image-container">
-                    <img src="../resources/test.jpg">
-                  </div>
-                  <div class="movie-recommendation-image-container">
-                    <img src="../resources/test.jpg">
-                  </div>
-                  <div class="movie-recommendation-image-container">
-                    <img src="../resources/test.jpg">
-                  </div>
-
-                </div>
-            </div>
-
-            <div class="movie-trailer-reviews-container">
-              <div class="trailer-window"><iframe width="600" height="480" src="https://www.youtube.com/embed/NmzuHjWmXOc"></div>
-              <div class="movie-review-rating">hi My name is Baraa</div>
-            </div>
-
-        </div>
+        <div class="movie-content"></div>
       </div>
+
+      <script id="movie-template" type="text/x-handlebars-template">
+
+        <div class="movie-details" data-id="{{movie._id}}">
+          <div class="movie-image-container"><img src="{{movie.image}}"/></div>
+          <div class="movie-data">
+              <div class="movie-title"><h1>{{movie.title}}</h1></div>
+              <div class="movie-year"><b>{{movie.year}}</b></div>
+              <div class="movie-genre"><b>{{this.genre}}</b></div>
+              <div class="movie-description"><b>Description:</b><p>{{movie.description}}</p></div>
+              <div class="movie-rating">
+                <a href="https://www.imdb.com/title/{{movie.imdbid}}/"><img src="../resources/logo-imdb.svg"></a>
+                4.2&nbsp;&nbsp;<i class="fa-solid fa-star"></i>
+              </div>
+          </div>
+          <div class="movie-recommendation"></div>
+      </div>
+
+      <div class="movie-trailer-reviews-container">
+        <div class="movie-review-rating">
+          <div class="review-label"><h1>Reviews</h1></div>
+          <div class="reviews-container">
+            <div class="review">
+              <div class="reviewer-name">Baraa Knaane</div>
+              <div class="review-content">stam text for stuff</div>
+            </div>
+          </div>
+        </div>
+        <div class="trailer-window"><iframe class="youtube-video" src="{{movie.trailer}}"></div>
+      </div>
+
+      </script>
+
+      <script id="review-template" type="text/x-handlebars-template">
+
+        <div class="movie-recommendation-image-container">
+          <img src="{{this.image}}">
+        </div>
+
+      </script>
 
     <script src="../model.js"></script>
     <script src="../render.js"></script>
