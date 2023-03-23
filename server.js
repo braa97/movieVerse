@@ -3,6 +3,7 @@ const app = express()
 const path = require('path')
 const homeApi = require('./server/routes/homeApi')
 const movieApi = require('./server/routes/movieApi')
+const loginApi = require('./server/routes/loginApi')
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -18,6 +19,9 @@ mongoose.connect("mongodb://127.0.0.1:27017/movieVerse", {
 app.use('/home', homeApi)
 app.use('/movie', movieApi, function(req, res) {
   res.sendFile(path.join(__dirname, '../../dist/movie'))
+})
+app.use('/login', loginApi, function(req, res) {
+  res.sendFile(path.join(__dirname, '../../dist/login'))
 })
 
 const port = 4000

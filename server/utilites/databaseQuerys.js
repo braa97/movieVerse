@@ -1,4 +1,4 @@
-const Movie = require("../models/movieSchema");
+const {Movie} = require("../models/movieSchema");
 
 class MovieQuerys {
   constructor() {}

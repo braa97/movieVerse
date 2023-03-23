@@ -1,0 +1,2 @@
+const movieModel = new model();
+

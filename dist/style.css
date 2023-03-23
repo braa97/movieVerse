@@ -367,5 +367,16 @@ body {
   align-items: start;
   justify-content: end;
   margin-right: 5%;
+}
 
+.movie-review-input-field {
+  display: flex;
+  margin-bottom: 3%;
+}
+
+.movie-review-input-field input {
+  width: 70%;
+  margin-left: 7%;
+  line-height: 2rem;
+  margin-right: 15px;
 }

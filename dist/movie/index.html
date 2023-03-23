@@ -57,7 +57,7 @@
                 <div class="movie-description"><b>Description:</b><p>{{movie.description}}</p></div>
                 <div class="movie-rating">
                   <a href="https://www.imdb.com/title/{{movie.imdbid}}/"><img src="../resources/logo-imdb.svg"></a>
-                  4.2&nbsp;&nbsp;<i class="fa-solid fa-star"></i>
+                  {{movie.rating}}&nbsp;&nbsp;<i class="fa-solid fa-star"></i>
                 </div>
             </div>
             <div class="movie-recommendation"></div><!--Put recommended movies in this div-->
@@ -66,6 +66,10 @@
           <div class="movie-review-rating">
             <div class="review-label"><h1>Reviews</h1></div>
             <div class="reviews-container"></div> <!--Put reviews in this container-->
+            <div class="movie-review-input-field">
+              <input id="reviewText" placeholder="Add review">
+              <button id="addReview">Add Review</button>
+            </div>
           </div>
           <div class="trailer-window"><iframe class="youtube-video" src="{{movie.trailer}}"></div>
       </div>

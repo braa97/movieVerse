@@ -69,3 +69,7 @@ $('.movie-collection').on('click', 'img' , function(){
   const movieId = $(this).closest('.movie').data().id
   window.location.href = `/movie/index.html?id=${movieId}`
 })
+
+$('.user').on('click', function () {
+  window.location.href = `/login/index.html`
+})
