@@ -5,9 +5,9 @@ class Model {
     this._historyData = [];
   }
   
-  getAllMovies(rating, category, year,page ,limit=5) {
+  getAllMovies(rating, category, year) {
     this._moviesData = [];
-    return $.get(`/home/movies?rating=${rating}&genre=${category}&year=${year}&page=${page}&limit=${limit}`)
+    return $.get(`/home/movies?rating=${rating}&genre=${category}&year=${year}`)
     .then((moviesDataResult) => {
       moviesDataResult.forEach((element) => {
         this._moviesData.push(element);
@@ -17,7 +17,7 @@ class Model {
 
   getMovieByName(movieName){
     this._moviesData = [];
-    return $.get(`/movie/${movieName}`)
+    return $.get(`/browse/${movieName}`)
     .then((movie)=> {
       this._moviesData.push(movie);
     })
