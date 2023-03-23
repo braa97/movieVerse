@@ -90,10 +90,12 @@
     </script>
 
     <script id="review-template" type="text/x-handlebars-template">
+      {{#each movie.reviews}}
       <div class="review">
-        <div class="reviewer-name">{{reviewer}}</div>
-        <div class="review-content">{{review}}</div>
+        <div class="reviewer-name">Main User</div>
+        <div class="review-content">{{this.text}}</div>
       </div>
+      {{/each}}
     </script>
 
     <script src="../model.js"></script>

@@ -10,6 +10,18 @@ movieModel.getMovieById(id[1]).then(() => {
     movieModel.getRecommendedMovies(genre)
     .then(() => {
         render.renderRecommendedMovie(movieModel.allData)
+        render.renderReview(movieModel.allData[0])
     })
 })
 
+$('.movie-content').on('click', '#addReview', function() {
+    let text = $(this).siblings('#reviewText').val()
+    let review = {}
+    review.text = text
+    review.movieId = movieModel.allData[0]._id
+    movieModel.addReview(review)
+    .then(() => {
+        render.renderReview(movieModel.allData[0])
+        $(this).siblings('#reviewText').val('')
+    })
+})

@@ -25,11 +25,11 @@ class Renderer {
     $('.movie-recommendation').append(newHtml);
   }
 
-  renderReview(reviews) {
-    $(".movie-main-container").empty();
+  renderReview(movie) {
+    $(".reviews-container").empty();
     const source = $('#review-template').html();
     const template = Handlebars.compile(source);
-    const newHtml = template({reviews});
-    $('.movie-main-container').append(newHtml);
+    const newHtml = template({movie});
+    $('.reviews-container').append(newHtml);
   }
 }

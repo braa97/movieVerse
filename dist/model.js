@@ -4,6 +4,7 @@ class Model {
     this._favoriteMovies = [];
     this._historyData = [];
   }
+  
   getAllMovies(rating, category, year,page ,limit=5) {
     this._moviesData = [];
     return $.get(`/home/movies?rating=${rating}&genre=${category}&year=${year}&page=${page}&limit=${limit}`)
@@ -35,7 +36,6 @@ class Model {
     return $.get(`/movie/genre/${genre}`)
     .then((movies) => {
       movies.forEach((movie) => {
-        console.log(movie);
         this._moviesData.push(movie);
       })
     })
@@ -48,10 +48,11 @@ class Model {
     })
   }
 
-  addToHistory(movieId) {
-    return $.post(`movie` , movieId)
+  addReview(review) {
+    this._moviesData = []
+    return $.post(`/movie/review` , review)
     .then((movie)=> {
-        this._historyData.push(movie);
+        this._moviesData.push(movie);
     })
   }
 

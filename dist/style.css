@@ -136,6 +136,7 @@ body {
 
 .thumbnail {
   grid-area: img;
+  cursor: pointer;
 }
 
 .thumbnail img {
@@ -376,7 +377,6 @@ body {
 
 .movie-review-input-field input {
   width: 70%;
-  margin-left: 7%;
+  margin: 20px 15px 0 7%;
   line-height: 2rem;
-  margin-right: 15px;
 }
