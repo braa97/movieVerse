@@ -380,3 +380,8 @@ body {
   margin: 20px 15px 0 7%;
   line-height: 2rem;
 }
+
+.serach {
+  justify-self: center;
+  margin-top: 2%;
+}

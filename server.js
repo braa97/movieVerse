@@ -4,6 +4,8 @@ const path = require('path')
 const homeApi = require('./server/routes/homeApi')
 const movieApi = require('./server/routes/movieApi')
 const loginApi = require('./server/routes/loginApi')
+const historyApi = require('./server/routes/historyApi')
+const browseApi = require('./server/routes/browseApi')
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -22,6 +24,12 @@ app.use('/movie', movieApi, function(req, res) {
 })
 app.use('/login', loginApi, function(req, res) {
   res.sendFile(path.join(__dirname, '../../dist/login'))
+})
+app.use('/history', historyApi, function(req, res) {
+  res.sendFile(path.join(__dirname, '../../dist/history'))
+})
+app.use('/browse', browseApi, function(req, res) {
+  res.sendFile(path.join(__dirname, '../../dist/browse'))
 })
 
 const port = 4000

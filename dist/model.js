@@ -48,6 +48,13 @@ class Model {
     })
   }
 
+  addToHistory(movieId) {
+    return $.get(`/movie/${movieId}`)
+    .then((movie)=> {
+        this._historyData.push(movie);
+    })
+  }
+
   addReview(review) {
     this._moviesData = []
     return $.post(`/movie/review` , review)
